@@ -1,0 +1,6 @@
+#!/bin/bash
+
+kill $!
+
+// $! expands ot PID of the last process executed in the background
+// kill %% - most recent background jobs

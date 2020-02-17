@@ -1,0 +1,11 @@
+#!/bin/bash
+
+nslookup slash16.org
+
+# netstat -rn | grep 'default'
+
+# netstat -nr | grep default | head -1 | awk '{print$2}'
+#-n shows network addresses as nums
+# -r shows routing tables
+# head -1 remove first line from grep result
+

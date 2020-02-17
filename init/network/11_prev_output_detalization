@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# we look for nat-1 - Network Address Translation, first connect local and outside networks
+
+traceroute slash16.org

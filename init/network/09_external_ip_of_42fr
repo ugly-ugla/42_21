@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# nslookup 42.fr | grep 'Address:' | awk '{print $2}' | sort here we need to print only address after Name: 42.fr
+
+# dig +short 42.fr @resolver1.opendns.com

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+IFS=':'
+
+while read username password uid gid comment home_dir shell
+do
+	echo "$username $uid $home_dir"
+done < /etc/passwd
+
+# cat /etc/passwd | awk -F':' '{print $1 " " $3 " " $6 }'

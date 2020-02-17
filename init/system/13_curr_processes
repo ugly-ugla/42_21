@@ -1,0 +1,9 @@
+#!/bin/bash
+
+// trad way )) processes using most CPU at the top of list
+
+top
+
+// htop - improved top command not installed on Linux by default
+// ps -A - list all processes running on system
+// pstree - visualizing processes in tree format
