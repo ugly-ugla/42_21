@@ -1,5 +1,3 @@
-# fillit
+# 42_21
 
-VALIDATION part. Redesign output list.
-
-Algorithm part was writen by my partner.
+Some training projects on C.
