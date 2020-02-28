@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "../includes/ft_ls.h"
 
 void	recursion(t_dir *list, int flags, char *path, int ac)
@@ -57,23 +56,44 @@ void	ft_ls(char *path, int flags, int ac)
 	delete_list(&initial);
 }
 
-int		main(int ac, char **av)
+void	files_args(char **args, int flags, int ac)
 {
-	int		flags;
-	int		check;
-	char	*args[ac];
-	int		j;
+	int i;
+
+	i = -1;
+	while (args[++i])
+		if (!(isdir(args[i])))
+		{
+			ft_ls(args[i], flags, ac);
+			ft_putchar('\n');
+		}
+}
+
+// no need to do such things as "real" files first
+// dirs second
+
+int		ft_ls_all(char **args, int flags, int ac)
+{
+	int i;
+	int check;
 
 	check = 0;
-	flags = get_flags(ac, av);
-	if (ac == 1)
-		ft_ls(".", flags, ac);
-	else
+	files_args(args, flags, ac);
+	i = -1;
+	while (args[++i])
 	{
-		j = add_args(args, ac, av);
-		check = execute_args(args, flags, j);
-		if (check == 0)
-			ft_ls(".", flags, ac);
+		if (isdir(args[i]))
+		{
+			if (ac > 1 && !(flags & 4))
+			{
+				if (i && args[i - 1])
+					ft_putchar('\n');
+				ft_putstr(args[i]);
+				ft_putstr(":\n");
+			}
+			ft_ls(args[i], flags, ac);
+		}
+		check = 1;
 	}
-	return (0);
+	return (check);
 }

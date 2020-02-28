@@ -1,6 +1,8 @@
 #ifndef FT_LS_H
 # define FT_LS_H
 
+# include <stdio.h>
+
 //# include <sys/acl.>
 # include <sys/stat.h>
 # include <sys/types.h>
@@ -16,6 +18,21 @@
 # include <time.h>
 # include <unistd.h>
 # include "../libft/libft.h"
+
+# define LONG_LISTING 1
+# define ALL 2
+# define RECURSIVE 4
+# define REVERSE 8
+# define TIME_SORT 16
+# define OFPL 32
+# define NUMERIC_IDS 64
+# define NO_SORT 128
+# define DIRS_IND 256
+# define NO_GROUP 512
+# define ALL_MINUS 1024
+
+# define FLAG '-'
+# define EMPTY_STRING ""
 
 typedef struct	s_dir
 {
