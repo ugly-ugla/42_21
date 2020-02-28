@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# broadcast address of Ethernet interface can call
+# broadcast
+# Bcast etc
+
+ifconfig -L en0
+
+# ipconfig getifaddr en0
+# ifconfig en) | grep 'inet' | cut -d' ' -f2
+
+
+# also I need Ethernet and find IPs
+
+ifconfig -L en0 | grep 'inet' | cut -d ' ' -f2

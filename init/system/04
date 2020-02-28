@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# who is the command to know how many users are logged in
+# and what are they doing
+# -b is for last time rebooted
+
+who -b

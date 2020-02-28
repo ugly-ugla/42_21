@@ -1,7 +1,0 @@
-#!/bin/bash
-
-ifconfig -L en0
-
-# ipconfig getifaddr en0
-# ifconfig en) | grep 'inet' | cut -d' ' -f2
-

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# ifconfig is a command line tool used to configure a network interface in Linux. 
+# It can be used to set-up any/all the network interfaces such as Ethernet,
+# wireless, modem and so on that are connected to your computer.
+
+# I look for lines with 'flags' as first lines in ifconfig report
+# there I print first substring without last symbol ':'
+
+ifconfig -a | grep 'flags' | awk '{print substr($1, 1, length($1)-1)}'

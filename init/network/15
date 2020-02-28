@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo echo "46.19.122.85 intra.42.fr" > /etc/hosts
+
+# add as last line into hosts, BUT it needs admin's rights
+# full address is better

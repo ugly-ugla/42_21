@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# it's Amazon Web Services and we can know it from
+
+whois slash16.org | grep 'Name Server'
+

@@ -1,5 +1,0 @@
-/etc/resolv.conf
-
-# cat /etc/resolve.conf | grep 'nameserver' | awk '{print $2}'
-
-# cat /var/run/resolv.conf 'cause it's symbolic link

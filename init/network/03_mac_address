@@ -1,8 +1,0 @@
-ifconfig en1 | awk '/ether/{print $2}'
-
-# en1 is the WiFi card
-# awk is used to print the value number $X - in this example it's second
-
-# netstat -nr | grep -A 2 Internet: | grep default | awk '{if ($1 == "default") print $2;}'
-
-# ifconfig en1

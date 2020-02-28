@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# this is diagnostic command for displaying the route (path)
+# and measuring transit delay of packets across an IP network
+
+traceroute slash16.org

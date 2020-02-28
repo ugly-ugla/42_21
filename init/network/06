@@ -1,0 +1,9 @@
+/etc/resolv.conf
+
+# cat /etc/resolve.conf | grep 'nameserver' | awk '{print $2}'
+
+# cat /var/run/resolv.conf 'cause it's symbolic link
+
+# because that file is automatically generated,
+# it is not always considered accurate 
+# if DNS has recently changed and has not yet been flushed

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Var 00:
+# using grep with -A print lines following the pattern (0-1-2-etc)
+
+nslookup 42.fr | grep -A1 42.fr
+
+# Var 01:
+# awk with getline read next line after pattern
+
+nslookup 42.fr | awk '/42.fr/{getline;print;}'
+
+# Var 02:
+# by default dig display the A record of domain name
+# +short by default display only the ip-address of domain name
+# +short ns display ns etc
+
+dig +short 42.fr
+
+# 163.172.250.12
+# 163.172.250.13

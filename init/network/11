@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# we look for nat-1 - Network Address Translation -
+# first connect local and outside networks
+# it's 2nd line in traceroute (prev.exs.)
+# 1st line is local IP
+# 3rd line is public IP
