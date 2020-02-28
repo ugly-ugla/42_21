@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/28 12:39:21 by jkarren           #+#    #+#             */
+/*   Updated: 2020/02/28 14:09:23 by jkarren          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_ls.h"
 
 /*
@@ -49,6 +61,31 @@ char	**get_files(int ac, char **av)
 }
 
 /*
+** Flags Integer Representation
+**
+** in this func I return int representation of each flag
+** all reprs are powers of 2 'cause I need its
+** to create unique binary representation as 11111 etc
+** actually it 1-... line as I wrote in header
+** but here I use defines for increase code readability
+*/
+
+int		fir(char flag)
+{
+	if (flag == 'l')
+		return (LONG_LISTING);
+	if (flag == 'a')
+		return (ALL);
+	if (flag == 'R')
+		return (RECURSIVE);
+	if (flag == 'r')
+		return (REVERSE);
+	if (flag == 't')
+		return (TIME_SORT);
+	return (STDRET);
+}
+
+/*
 ** in this func I parse args and catch all flags
 ** started with single '-'
 */
@@ -70,6 +107,32 @@ char	*get_flags(int ac, char **av)
 }
 
 /*
+** Flags Binary Representation
+**
+** at first I place all flags in one string and check
+** if there're invalid flags
+** so if invalid flag are catched I return flag error
+** else I use OR for catch all flags marked as 1 in binary rst
+*/
+
+int		fbr(int ac, char **av)
+{
+	char	*flags;
+	int		rst;
+	
+	flags = get_flags(ac, av);
+	if ((flags_error(flags) == ERROR))
+		return (ERROR);
+	rst = 0;
+	while (*flags)
+	{
+		rst |= fir(*flags);
+		flags++;
+	}
+	return (rst);
+}
+
+/*
 ** at first I need to catch all flags and all dirs that I'll work with
 ** for cases like ./ft_ls -l dir1 -R dir2 etc.
 ** so I got a string with all keys
@@ -78,12 +141,13 @@ char	*get_flags(int ac, char **av)
 
 int		main(int ac, char **av)
 {
-	char	*flags;
+	int		flags;
 	char	**files;
 
 	if (ac > 1)
 	{
-		flags = get_flags(ac, av); //OK
+		if ((flags = fbr(ac, av)) == ERROR)
+			return (STDRET)
 		files = get_files(ac, av); //OK
 		if (!files)
 			ft_ls(".", flags, 1);
@@ -92,5 +156,5 @@ int		main(int ac, char **av)
 	}
 	else
 		ft_ls(".", flags, 1);
-	return (0);
+	return (STDRET);
 }

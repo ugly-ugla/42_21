@@ -1,20 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   fbr.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkarren <jkarren@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 01:48:27 by jkarren           #+#    #+#             */
-/*   Updated: 2020/02/28 13:01:08 by jkarren          ###   ########.fr       */
+/*   Created: 2020/02/28 12:42:36 by jkarren           #+#    #+#             */
+/*   Updated: 2020/02/28 13:37:22 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/ft_ls.h"
 
-int		ft_strequ(char const *s1, char const *s2)
-{
-	if (!s1 || !s2)
-		return (0);
-	return (ft_strcmp(s1, s2) == 0 ? 1 : 0);
-}
+int		fbr(char *flags_str)
