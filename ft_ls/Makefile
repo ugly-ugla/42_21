@@ -13,16 +13,19 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	@make -C libft
 	$(CC) $(CFLAGS) -I $(HDIR) $(SRCS) -o $(NAME)
 
-%.o: %.c $(DEPS)
+%.o: %.c ${DEPS}
 	gcc $(CFLAGS) -I $(HDIR) -c $< -o $@
 
 clean:
 	/bin/rm -f src/*.o
 	/bin/rm -f src/*.gch
+	@make -C libft clean
 
 fclean: clean
 	/bin/rm -f $(NAME)
+	@make -C libft fclean
 
 re: fclean all

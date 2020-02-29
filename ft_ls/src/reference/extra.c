@@ -1,11 +1,6 @@
 #include "../includes/ft_ls.h"
 
-void	initialize_blocks(t_blocks *blocks, int flags, int ac)
-{
-	blocks->flags = flags;
-	blocks->total = 0;
-	blocks->count = ac;
-}
+
 
 void	format_id(char *id)
 {

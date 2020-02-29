@@ -1,39 +1,39 @@
 #include "../includes/ft_ls.h"
 
-void	recursion(t_dir *list, int flags, char *path, int ac)
+void	recursion(t_file *head, int flags, char *path, int ac)
 {
-	t_dir	*ptr;
+	t_file	*tmp;
 	char	*s1;
 	char	*s2;
 
-	ptr = list;
-	while (ptr != NULL)
+	tmp = head;
+	while (tmp)
 	{
-		if ((ptr->type == 4) && (ft_strcmp(ptr->name, ".") != 0)
-		&& (ft_strcmp(ptr->name, "..") != 0))
+		if ((tmp->type == 4) && (ft_strcmp(tmp->name, "."))
+		&& (ft_strcmp(tmp->name, "..")))
 		{
-			if (!(flags & 2) && (ptr->name[0] == '.'))
+			if (!(flags & 2) && (tmp->name[0] == '.'))
 			{
-				ptr = ptr->next;
+				tmp = tmp->next;
 				continue ;
 			}
 			s1 = ft_strjoin(path[ft_strlen(path) - 1] != '/' ? "/" : "",
-						ptr->name);
+						tmp->name);
 			s2 = ft_strjoin(path, s1);
 			free(s1);
 			ft_ls(s2, flags, ac);
 			free(s2);
 		}
-		ptr = ptr->next;
+		tmp = tmp->next;
 	}
 }
 
 void	ft_ls(char *path, int flags, int ac)
 {
 	struct dirent	*de;
-	t_dir			*initial;
 	DIR				*dr;
-	t_blocks		blocks;
+	t_file			*head;
+	t_global		blocks;
 
 	initialize_blocks(&blocks, flags, ac);
 	initial = NULL;
@@ -69,10 +69,7 @@ void	files_args(char **args, int flags, int ac)
 		}
 }
 
-// no need to do such things as "real" files first
-// dirs second
-
-int		ft_ls_all(char **args, int flags, int ac)
+int		ft_ls_all(char **files, int flags, int ac)
 {
 	int i;
 	int check;

@@ -55,7 +55,7 @@
 # define EMPTY_STRING ""
 
 /*
-** ---------------- ERRORS ------------------
+** ----------- ERRORS && RETURNS ------------
 */
 
 # define STDRET 0
@@ -91,7 +91,7 @@ typedef struct	s_global
 }				t_global;
 
 /*
-** --------------- functions ---------------
+** --------------- FUNCTIONS ----------------
 */
 
 #endif

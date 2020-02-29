@@ -1,15 +1,6 @@
 #include "../includes/ft_ls.h"
 
-void	set_blocks(int block, t_blocks *total, char *name)
-{
-	if (total->flags & 2)
-		total->total += block;
-	else
-	{
-		if (ft_strncmp(name, ".", 1) != 0)
-			total->total += block;
-	}
-}
+
 
 int		isdir(const char *path)
 {

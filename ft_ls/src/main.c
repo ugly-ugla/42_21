@@ -60,6 +60,8 @@ char	**get_files(int ac, char **av)
 	return (files);
 }
 
+
+
 /*
 ** Flags Integer Representation
 **
@@ -141,18 +143,16 @@ int		fbr(int ac, char **av)
 
 int		main(int ac, char **av)
 {
-	int		flags;
-	char	**files;
+	int			flags;
+	char		**files;
+	t_global	data;
 
 	if (ac > 1)
 	{
 		if ((flags = fbr(ac, av)) == ERROR)
 			return (STDRET)
-		files = get_files(ac, av); //OK
-		if (!files)
-			ft_ls(".", flags, 1);
-		else
-			ft_ls_all(files, flags, ac);
+		files = get_files(ac, av);
+		fill_global_data(&data, flags, ac);
 	}
 	else
 		ft_ls(".", flags, 1);
