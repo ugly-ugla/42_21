@@ -7,4 +7,6 @@
 # I look for lines with 'flags' as first lines in ifconfig report
 # there I print first substring without last symbol ':'
 
-ifconfig -a | grep 'flags' | awk '{print substr($1, 1, length($1)-1)}'
+ifconfig -a | grep 'flags=' | awk '{if ($1 != "member:") print substr($1, 1, length($1)-1)}'
+# or (not work on ubuntu)
+ifconfig -l

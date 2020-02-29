@@ -5,22 +5,22 @@
 # Var 00:
 # using route command I show the IP routing table
 
-route -n
+# route -n
 
 # Var 01:
 # ip route / ip r / ip route show
 
-ip route | awk '/default/{print $3}'
+# ip route | awk '/default/{print $3}'
 
 # Var 02:
 # netstat is a tool for Network Statistics displaying
 # network connections and related info
 
-netstat -r | awk '/default/{print $2}'
+# netstat -r | awk '/default/{print $2}'
 # for digits view
 netstat -nr | awk '/default/{print $2}'
 
 # Var 03:
 # routel command list routes with pretty output
 
-routel | awk '/gateway/{getline;print;}'
+# routel | awk '/gateway/{getline;print;}'
