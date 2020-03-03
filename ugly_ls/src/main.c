@@ -6,7 +6,7 @@
 /*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 12:26:57 by jkarren           #+#    #+#             */
-/*   Updated: 2020/03/03 12:30:00 by jkarren          ###   ########.fr       */
+/*   Updated: 2020/03/03 14:44:46 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,20 @@
 ** 
 */
 
-int     main(int ac, char **av)
+int		main(int ac, char **av)
 {
-    t_args  *args;
+	t_args	*args;
 
-    if (!(args = (t_args*)malloc(sizeof(t_args))))
-        return (STDRET);
-    fill_args(ac, av, args);
-    if (args->flags == ERROR)
-        return (STDRET);
-    print_args(args); // util for checking errors
-//    match_flags_to(args); // not need in demo-version
-//    ft_putnbr(args->flags); // util for checking errors
-    return (STDRET);
+	if (!(args = (t_args*)malloc(sizeof(t_args))))
+		return (STDRET);
+	fill_args(ac, av, args);
+	if (args->flags == ERROR || invalid_option(args->options))
+	{
+		free_args(&args);
+		return (STDRET);
+	}
+	print_args(args);
+	match_flags(args);
+	ft_putnbr(args->flags);
+	return (STDRET);
 }

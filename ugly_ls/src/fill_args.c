@@ -6,7 +6,7 @@
 /*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 12:27:24 by jkarren           #+#    #+#             */
-/*   Updated: 2020/03/03 12:27:27 by jkarren          ###   ########.fr       */
+/*   Updated: 2020/03/03 14:35:32 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,44 +21,44 @@
 ** and fill it with finded options or NULL as default
 */
 
-void    fill_options(int ac, char **av, t_args *args)
+void	fill_options(int ac, char **av, t_args *args)
 {
-    int i;
-    int cnt;
+	int	i;
+	int	cnt;
 
-    if (ac == 1)
-        args->options = NULL;
-    else
-    {
-        i = 0;
-        cnt = 0;
-        while (++i < ac)
-            if (av[i][0] == '-' && av[i][1] == '-')
-                ++cnt;
-        if (!cnt)
-            args->options = NULL;
-        else
-        {
-            args->options = (char**)malloc(sizeof(char*) * (cnt + 1));
-            i = 0;
-            cnt = -1;
-            while (++i < ac)
-                if (av[i][0] == '-' && av[i][1] == '-')
-                    args->options[++cnt] = av[i];
-            args->options[++cnt] = NULL;
-        }   
-    }
+	if (ac == 1)
+		args->options = NULL;
+	else
+	{
+		i = 0;
+		cnt = 0;
+		while (++i < ac)
+			if (av[i][0] == '-' && av[i][1] == '-')
+				++cnt;
+		if (!cnt)
+			args->options = NULL;
+		else
+		{
+			args->options = (char**)malloc(sizeof(char*) * (cnt + 1));
+			i = 0;
+			cnt = -1;
+			while (++i < ac)
+				if (av[i][0] == '-' && av[i][1] == '-')
+					args->options[++cnt] = av[i];
+			args->options[++cnt] = NULL;
+		}
+	}
 }
 
 /*
 ** set default "." file name
 */
 
-void    default_file(t_args *args)
+void	default_file(t_args *args)
 {
-    args->files = malloc(sizeof(char*) * 2);
-    args->files[0] = ".";
-    args->files[1] = NULL;
+	args->files = malloc(sizeof(char*) * 2);
+	args->files[0] = ".";
+	args->files[1] = NULL;
 }
 
 /*
@@ -66,33 +66,33 @@ void    default_file(t_args *args)
 ** and fill it with file names or "." as default
 */
 
-void    fill_files(int ac, char **av, t_args *args)
+void	fill_files(int ac, char **av, t_args *args)
 {
-    int i;
-    int cnt;
+	int	i;
+	int	cnt;
 
-    if (ac == 1)
-        default_file(args);        
-    else
-    {
-        i = 0;
-        cnt = 0;
-        while (++i < ac)
-            if (av[i][0] != '-')
-                ++cnt;
-        if (!cnt)
-            default_file(args);
-        else
-        {
-            args->files = (char**)malloc(sizeof(char*) * (cnt + 1));
-            i = 0;
-            cnt = -1;
-            while (++i < ac)
-                if (av[i][0] != '-')
-                    args->files[++cnt] = av[i];
-            args->files[++cnt] = NULL;
-        }   
-    }
+	if (ac == 1)
+		default_file(args);
+	else
+	{
+		i = 0;
+		cnt = 0;
+		while (++i < ac)
+			if (av[i][0] != '-')
+				++cnt;
+		if (!cnt)
+			default_file(args);
+		else
+		{
+			args->files = (char**)malloc(sizeof(char*) * (cnt + 1));
+			i = 0;
+			cnt = -1;
+			while (++i < ac)
+				if (av[i][0] != '-')
+					args->files[++cnt] = av[i];
+			args->files[++cnt] = NULL;
+		}
+	}
 }
 
 /*
@@ -100,13 +100,13 @@ void    fill_files(int ac, char **av, t_args *args)
 ** or search and convert flags into int representation
 */
 
-void    fill_flags(int ac, char **av, t_args *args)
+void	fill_flags(int ac, char **av, t_args *args)
 {
-    args->flags = NOFLAGS;
-    if (ac == 1)
-        return ;
-    else
-        args->flags = convert_flags(ac, av);
+	args->flags = NOFLAGS;
+	if (ac == 1)
+		return ;
+	else
+		args->flags = convert_flags(ac, av);
 }
 
 /*
@@ -116,9 +116,9 @@ void    fill_flags(int ac, char **av, t_args *args)
 ** on every next step
 */
 
-void    fill_args(int ac, char **av, t_args *args)
+void	fill_args(int ac, char **av, t_args *args)
 {
-    fill_flags(ac, av, args);
-    fill_files(ac, av, args);
-    fill_options(ac, av, args);
+	fill_flags(ac, av, args);
+	fill_files(ac, av, args);
+	fill_options(ac, av, args);
 }

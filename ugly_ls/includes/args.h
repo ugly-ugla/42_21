@@ -6,7 +6,7 @@
 /*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 12:31:10 by jkarren           #+#    #+#             */
-/*   Updated: 2020/03/03 12:39:30 by jkarren          ###   ########.fr       */
+/*   Updated: 2020/03/03 14:44:49 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,8 @@ int				int_flag2(char flag);
 void			fill_files(int ac, char **av, t_args *args);
 void			default_file(t_args *args);
 void			fill_options(int ac, char **av, t_args *args);
+
+int				flag_error(char flag);
+int				invalid_option(char **options);
 
 #endif

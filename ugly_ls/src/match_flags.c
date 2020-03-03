@@ -6,14 +6,14 @@
 /*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 12:27:34 by jkarren           #+#    #+#             */
-/*   Updated: 2020/03/03 12:27:35 by jkarren          ###   ########.fr       */
+/*   Updated: 2020/03/03 14:13:30 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ugly_ls.h"
 
-void    match_flags(t_args *args)
+void	match_flags(t_args *args)
 {
-    if (args)
-        return ;
+	if (args)
+		return ;
 }
