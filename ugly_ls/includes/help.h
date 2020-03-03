@@ -6,14 +6,14 @@
 /*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 12:31:24 by jkarren           #+#    #+#             */
-/*   Updated: 2020/03/03 12:44:44 by jkarren          ###   ########.fr       */
+/*   Updated: 2020/03/03 15:46:29 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HELP_H
 # define HELP_H
 
-# define USAGE_HELP "Try 'ls --help' for more information."
+# define USAGE_HELP "Try './ugly_ls --help' for more information."
 # define USAGE "usage: ./ugly_ls [OPTION]... [FILE]..."
 # define USAGE_AL " -a						do not ignore entries starting with ."
 # define USAGE_AU " -A                      do not list implied . and .."

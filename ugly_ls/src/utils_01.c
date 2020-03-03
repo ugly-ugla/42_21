@@ -1,14 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_01.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/03 12:27:46 by jkarren           #+#    #+#             */
-/*   Updated: 2020/03/03 14:44:43 by jkarren          ###   ########.fr       */
+/*   Created: 2020/03/03 15:57:52 by jkarren           #+#    #+#             */
+/*   Updated: 2020/03/03 15:57:55 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** FULL HOUSE
+*/
 
 #include "../includes/ugly_ls.h"
 
@@ -16,23 +20,16 @@
 ** function for free structure with 
 */
 
-void	free_flags(t_args **args)
+void	free_args(t_args **args)
 {
 	int	i;
 
-	free(*args->flags);
-	i = 0;
-	if (*args->files)
-		while (*args->files[i])
-			ft_strdel(*args->files[i]);
-	free(*args->files);
-	i = 0;
-	if (*args->options)
-		while (*args->options[i])
-			ft_strdel(*args->options[i]);
-	free(*args->options);
+	(*args)->flags = 0;
+	if ((*args)->files)
+		free((*args)->files);
+	if ((*args)->options)
+		free((*args)->options);
 	free(*args);
-	*args = NULL;
 }
 
 /*
@@ -45,13 +42,14 @@ int		invalid_option(char **options)
 {
 	int	i;
 
-	i = 0;
-	while (options[++i])
-		if (!ft_strcmp(options[i], HELP))
-		{
-			flag_error('-');
-			return (1);
-		}
+	i = -1;
+	if (options)
+		while (options[++i])
+			if (!ft_strequ(options[i], HELP))
+			{
+				flag_error('-');
+				return (1);
+			}
 	return (0);
 }
 
@@ -62,7 +60,8 @@ int		invalid_option(char **options)
 int		flag_error(char flag)
 {
 	ft_putstr(FLAG_ERROR);
-	ft_putendl(flag);
+	ft_putchar(flag);
+	ft_putchar('\n');
 	ft_putendl(USAGE_HELP);
 	return (ERROR);
 }

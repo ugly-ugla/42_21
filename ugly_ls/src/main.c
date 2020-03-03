@@ -6,7 +6,7 @@
 /*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 12:26:57 by jkarren           #+#    #+#             */
-/*   Updated: 2020/03/03 14:44:46 by jkarren          ###   ########.fr       */
+/*   Updated: 2020/03/03 15:43:38 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ int		main(int ac, char **av)
 	}
 	print_args(args);
 	match_flags(args);
-	ft_putnbr(args->flags);
 	return (STDRET);
 }

@@ -6,7 +6,7 @@
 /*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 12:27:14 by jkarren           #+#    #+#             */
-/*   Updated: 2020/03/03 14:35:12 by jkarren          ###   ########.fr       */
+/*   Updated: 2020/03/03 15:41:53 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,6 @@ int		convert_flags(int ac, char **av)
 	int		rst;
 
 	flags = get_flags(ac, av);
-	ft_putendl(flags);
 	rst = convert_to_int(flags);
 	return (rst);
 }
