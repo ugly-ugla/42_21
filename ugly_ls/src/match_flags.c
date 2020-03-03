@@ -2,5 +2,6 @@
 
 void    match_flags(t_args *args)
 {
-    if (args->options)
+    if (args)
+        return ;
 }

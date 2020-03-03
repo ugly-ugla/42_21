@@ -4,39 +4,48 @@
 
 NAME = ugly_ls
 
-# SOURCE FILES
-SRCS = src/main.c src/fill_args.c src/convert_flags.c src/match_flags.c src/utils.c
+SDIR = src/
+SRC = main.c \
+		fill_args.c \
+		convert_flags.c \
+		match_flags.c \
+		utils.c \
+		
+SRCS = $(addprefix $(SDIR), $(SRC))
 
-# OBJECT FILES
-OBJS = $(SRCS.c=.o)
+ODIR = obj/
+OBJS = $(addprefix $(ODIR), $(SRC:.c=.o))
 
-# HEADERS
-DEPS = includes/ugly_ls.h includes/args.h includes/file.h includes/help.h
-HDIR  = includes/
+DEPS = ugly_ls.h args.h file.h help.h
+DDIR = includes/
 
-# LIBRARY
+LDIR = libft/
+LDDIR = libft/includes/
 LIB = -Llibft -lft
 
-# COMPILER
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+INC  = -I $(DDIR) -I $(LDDIR)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@make -C libft
-	$(CC) $(CFLAGS) -I $(HDIR) $(SRCS) -o $(NAME)
+	make -C $(LDIR)
+	echo libft compiled
+	$(CC) $(CFLAGS) $(OBJS) $(INC) -L $(LDIR) $(LIB) -o $(NAME)
+	echo ugly_ls compiled
 
-%.o:%.c ${DEPS}
-	$(CC) -I $(HDIR) -c $< -o $@
+$(ODIR)%.o:$(SDIR)%.c $($addprefix $(DDIR), $(DEPS))
+	mkdir -p $(ODIR)
+	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
-	/bin/rm -f src/*.o
-	/bin/rm -f includes/*.gch
-	@make -C libft clean
+	/bin/rm -rf $(ODIR)
+	/bin/rm -f $(DDIR)*.gch
+	make -C $(LDIR) clean
 
 fclean: clean
 	/bin/rm -f $(NAME)
-	@make -C libft fclean
+	make -C $(LDIR) fclean
 
 re: fclean all

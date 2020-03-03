@@ -15,7 +15,7 @@ int     main(int ac, char **av)
     if (args->flags == ERROR)
         return (STDRET);
     print_args(args); // util for checking errors
-    match_flags_to(args);
-    ft_putnbr(args->flags);
+//    match_flags_to(args); // not need in demo-version
+//    ft_putnbr(args->flags); // util for checking errors
     return (STDRET);
 }
