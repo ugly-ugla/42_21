@@ -4,100 +4,42 @@ test.sh: line 10: //make: No such file or directory
 
 NORMINETTE
 
-Norme: /Users/jkarren/00_mygithub/fillit/project/author
+Norme: /Users/jkarren/42_21/fillit/project/author
 Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/fillit
+Norme: /Users/jkarren/42_21/fillit/project/fillit
 Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/Makefile
+Norme: /Users/jkarren/42_21/fillit/project/Makefile
 Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/alg1.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/alg2.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/create_tetri_arr.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/create_tetri_buff.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/del_empty_lines.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_bzero.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_isalpha.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_memalloc.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_memdel.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_putchar.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_putchar_fd.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_putendl.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_putendl_fd.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_putstr_fd.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_strcdel.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_strcpy.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_strdel.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_strdup.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_strlen.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_strnew.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_strsplit.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_wordlen.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_wordscount.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/main.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/solve_tetrominoes.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/util.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/valid_tetri_list.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/validate_buff.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/validate_buff2.o
-Warning: Not a valid file
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/alg1.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/create_tetri_arr.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/del_empty_lines.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_bzero.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_isalpha.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_memalloc.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/fillit.h
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_putchar.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/create_tetri_buff.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_putchar_fd.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_putendl.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_putendl_fd.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_putstr_fd.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_strcdel.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_strcpy.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_strdup.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_strlen.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_strnew.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_strsplit.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_wordlen.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/alg2.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_memdel.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_strdel.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/ft_wordscount.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/main.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/util.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/solve_tetrominoes.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/validate_buff.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/valid_tetri_list.c
-Norme: /Users/jkarren/00_mygithub/fillit/project/src/validate_buff2.c
+Norme: /Users/jkarren/42_21/fillit/project/src/create_tetri_arr.c
+Norme: /Users/jkarren/42_21/fillit/project/src/alg1.c
+Norme: /Users/jkarren/42_21/fillit/project/src/del_empty_lines.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_bzero.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_isalpha.c
+Norme: /Users/jkarren/42_21/fillit/project/src/fillit.h
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_memdel.c
+Norme: /Users/jkarren/42_21/fillit/project/src/create_tetri_buff.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_putchar_fd.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_putchar.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_putendl.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_putendl_fd.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_putstr_fd.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_strcpy.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_strdel.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_strdup.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_strlen.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_strnew.c
+Norme: /Users/jkarren/42_21/fillit/project/src/alg2.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_memalloc.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_strcdel.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_strsplit.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_wordlen.c
+Norme: /Users/jkarren/42_21/fillit/project/src/ft_wordscount.c
+Norme: /Users/jkarren/42_21/fillit/project/src/main.c
+Norme: /Users/jkarren/42_21/fillit/project/src/util.c
+Norme: /Users/jkarren/42_21/fillit/project/src/solve_tetrominoes.c
+Norme: /Users/jkarren/42_21/fillit/project/src/validate_buff.c
+Norme: /Users/jkarren/42_21/fillit/project/src/validate_buff2.c
+Norme: /Users/jkarren/42_21/fillit/project/src/valid_tetri_list.c
 
 VALID MAPS CHECKING
 

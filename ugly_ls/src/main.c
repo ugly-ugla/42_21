@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/03/03 12:26:57 by jkarren           #+#    #+#             */
+/*   Updated: 2020/03/03 12:30:00 by jkarren          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ugly_ls.h"
 
 /*
 ** first I fill an array with all possible arguments
 ** composed of 3 possible types: flags, options, and files
+** 
 */
 
 int     main(int ac, char **av)
