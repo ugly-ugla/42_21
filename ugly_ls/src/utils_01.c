@@ -6,7 +6,7 @@
 /*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 15:57:52 by jkarren           #+#    #+#             */
-/*   Updated: 2020/03/03 15:57:55 by jkarren          ###   ########.fr       */
+/*   Updated: 2020/03/03 18:41:21 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,15 @@
 
 void	free_args(t_args **args)
 {
-	int	i;
-
 	(*args)->flags = 0;
 	if ((*args)->files)
 		free((*args)->files);
+	(*args)->files = NULL;
 	if ((*args)->options)
 		free((*args)->options);
+	(*args)->options = NULL;
 	free(*args);
+	*args = NULL;
 }
 
 /*
@@ -38,7 +39,7 @@ void	free_args(t_args **args)
 ** everything else will be fixed as invalid
 */
 
-int		invalid_option(char **options)
+int		option_error(char **options)
 {
 	int	i;
 
@@ -59,10 +60,10 @@ int		invalid_option(char **options)
 
 int		flag_error(char flag)
 {
-	ft_putstr(FLAG_ERROR);
+	ft_putstr(ERROR_FLAG);
 	ft_putchar(flag);
 	ft_putchar('\n');
-	ft_putendl(USAGE_HELP);
+	ft_putendl(ERROR_HELP);
 	return (ERROR);
 }
 

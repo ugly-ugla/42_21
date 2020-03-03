@@ -6,7 +6,7 @@
 /*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 12:27:14 by jkarren           #+#    #+#             */
-/*   Updated: 2020/03/03 15:41:53 by jkarren          ###   ########.fr       */
+/*   Updated: 2020/03/03 17:58:12 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,8 +101,12 @@ char	*get_flags(int ac, char **av)
 	i = 0;
 	flags = "\0";
 	while (++i < ac)
-		if (av[i][0] == '-' && av[i][1] != '-')
+	{
+		if (av[i][0] == '-' && av[i][1] != '-' && !glued_flags(av[i]))
 			flags = ft_strjoin(flags, av[i]);
+		else if (glued_flags(av[i]))
+			return ("-");
+	}		
 	ft_strcdel(flags, '-');
 	return (flags);
 }

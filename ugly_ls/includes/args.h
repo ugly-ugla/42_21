@@ -6,7 +6,7 @@
 /*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 12:31:10 by jkarren           #+#    #+#             */
-/*   Updated: 2020/03/03 15:43:51 by jkarren          ###   ########.fr       */
+/*   Updated: 2020/03/03 18:12:39 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@
 # define NOFLAGS 0
 # define INVALID 536870912
 
-# define FLAG_ERROR "ugly_ls: invalid option -- "
-
+# define ERROR_FLAG "ugly_ls: invalid option -- "
+# define ERROR_HELP "Try './ugly_ls --help' for more information"
 /*
 ** --------- OPTIONS ---------
 */
@@ -66,19 +66,22 @@ typedef struct	s_args
 
 void			fill_args(int ac, char **av, t_args *args);
 void			fill_flags(int ac, char **av, t_args *args);
+void			fill_files(int ac, char **av, t_args *args);
+void			fill_options(int ac, char **av, t_args *args);
+
 int				convert_flags(int ac, char **av);
 char			*get_flags(int ac, char **av);
 int				convert_to_int(char *flags);
 int				int_flag1(char flag);
 int				int_flag2(char flag);
-void			fill_files(int ac, char **av, t_args *args);
+
 void			default_file(t_args *args);
-void			fill_options(int ac, char **av, t_args *args);
 
 void			match_flags(t_args *args);
 
 int				flag_error(char flag);
-int				invalid_option(char **options);
+int				option_error(char **options);
+int				glued_flags(char *flags);
 
 void			free_args(t_args **args);
 

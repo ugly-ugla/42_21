@@ -9,7 +9,8 @@ SRC = main.c \
 		fill_args.c \
 		convert_flags.c \
 		match_flags.c \
-		utils.c \
+		utils_01.c \
+		utils_02.c \
 		
 SRCS = $(addprefix $(SDIR), $(SRC))
 
