@@ -6,11 +6,15 @@
 /*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/28 15:25:32 by jkarren           #+#    #+#             */
-/*   Updated: 2019/09/29 23:15:39 by jkarren          ###   ########.fr       */
+/*   Updated: 2020/03/04 14:58:58 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** let's free it
+*/
 
 static char	**ft_split(char *str, const char lim_ch)
 {

@@ -6,7 +6,7 @@
 /*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 01:44:32 by jkarren           #+#    #+#             */
-/*   Updated: 2019/09/27 20:10:17 by jkarren          ###   ########.fr       */
+/*   Updated: 2020/03/04 14:39:05 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memalloc(size_t size)
 {
 	void	*arr;
 
+	if (!size)
+		return (NULL);
 	arr = (void *)malloc(size);
 	if (arr)
 	{

@@ -6,7 +6,7 @@
 /*   By: jkarren <jkarren@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 01:44:48 by jkarren           #+#    #+#             */
-/*   Updated: 2019/11/28 18:43:09 by jkarren          ###   ########.fr       */
+/*   Updated: 2020/03/04 14:35:34 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src, int c,
 	size_t			i;
 	unsigned char	*rst;
 
-	i = 0;
+	i = -1;
 	rst = (unsigned char*)dst;
-	while (++i <= n)
+	while (++i < n)
 	{
 		rst[i] = ((unsigned char *)src)[i];
 		if (rst[i] == (unsigned char)c)

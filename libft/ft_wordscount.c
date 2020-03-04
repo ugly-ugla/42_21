@@ -6,7 +6,7 @@
 /*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/29 23:01:51 by jkarren           #+#    #+#             */
-/*   Updated: 2019/09/29 23:06:23 by jkarren          ###   ########.fr       */
+/*   Updated: 2020/03/04 14:57:06 by jkarren          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_wordscount(char *str, const char lim_ch)
 {
-	int	count;
-	int	i;
+	size_t	count;
+	size_t	i;
 
 	count = 0;
 	i = 0;
