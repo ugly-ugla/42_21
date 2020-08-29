@@ -5,7 +5,7 @@
 NAME = fdf
 
 SDIR = src/
-SRC = main.c \
+SRC = main.c
 SRCS = $(addprefix $(SDIR), $(SRC))
 
 ODIR = obj/
