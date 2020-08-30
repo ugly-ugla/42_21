@@ -17,7 +17,7 @@ SRCS = $(addprefix $(SDIR), $(SRC))
 ODIR = obj/
 OBJS = $(addprefix $(ODIR), $(SRC:.c=.o))
 
-DEPS = ugly_ls.h args.h file.h help.h
+DEPS = ft_ls.h
 DDIR = includes/
 
 LDIR = libft/

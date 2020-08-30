@@ -1,5 +1,16 @@
 #include "../includes/fdf.h"
 
+void    print_usage(void)
+{
+    ft_putendl("usage: ./fdf filename");
+}
+
+int     malloc_error(void)
+{
+    ft_putendl("Malloc error");
+    return (0);
+}
+
 /*
 ** 1) read map and fill data
 ** 2) bresenhamen algorithm
@@ -12,9 +23,16 @@
 
 int     main(int ac, char **av)
 {
-    fdf *data;
-    read_input();
-    data->zoom = 20;
-    window();
+    t_fdf **fdf;
+
+    if (ac == 2) {
+        if (!(fdf = (t_fdf *)ft_memalloc(sizeof(t_fdf))))
+            return (malloc_error());
+        fdf = read_map();
+        window();
+        draw(fdf);
+    } else {
+        print_usage();
+    }
     return (0);
 }

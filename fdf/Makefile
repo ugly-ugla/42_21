@@ -2,45 +2,54 @@
 
 .SILENT:
 
-NAME = fdf
+NAME	= fdf
 
-SDIR = src/
-SRC = main.c
-SRCS = $(addprefix $(SDIR), $(SRC))
+SRCDIR	= ./src/
+SRC		= main.c \
+		  read.c \
+		  window.c \
+		  algorithm.c
 
-ODIR = obj/
-OBJS = $(addprefix $(ODIR), $(SRC:.c=.o))
+OBJDIR	= ./obj/
+OBJ		= $(addprefix $(OBJDIR),$(SRC:.c=.o))
 
-DEPS = ugly_ls.h args.h file.h help.h
-DDIR = includes/
+INC	= -I ./includes/
 
-LDIR = libft/
-LDDIR = libft/includes/
-LIB = -Llibft -lft
+MLXDIR		= ./miniLibX/
+MLXLIB	= $(addprefix $(MLXDIR),mlx.a)
+MLXINC	= -I ./miniLibX
+MLXLNK	= -L ./miniLibX -l mlx -framework OpenGL -framework AppKit
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-INC  = -I $(DDIR) -I $(LDDIR)
+LIBDIR	= ./libft/
+LIBFT	= $(addprefix $(LIBFT_DIR),libft.a)
+LIBINC = -I ./libft
+LIBLNK = -L ./libft -l ft
 
-all: $(NAME)
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror -g
 
-$(NAME): $(OBJS)
-	make -C $(LDIR)
-	echo libft compiled
-	$(CC) $(CFLAGS) $(OBJS) $(INC) -L $(LDIR) $(LIB) -o $(NAME)
-	echo ugly_ls compiled
+all: $(LIBFT_MAKE) $(MLX_MAKE) $(NAME)
 
-$(ODIR)%.o:$(SDIR)%.c $($addprefix $(DDIR), $(DEPS))
-	mkdir -p $(ODIR)
-	$(CC) $(CFLAGS) $(INC) -c $< -o $@
+$(OBJDIR)%.o:$(SRCDIR)%.c
+	mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) $(MLXINC) $(LIBINC) $(INC) -o $@ -c $<
+
+$(LIBFT_MAKE):
+	make -C $(LIBDIR)
+
+$(MLX_MAKE):
+	make -C $(MLXDIR)
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) $(MLXLNK) $(LIBLNK) -lm -o $(NAME)
 
 clean:
-	/bin/rm -rf $(ODIR)
-	/bin/rm -f $(DDIR)*.gch
-	make -C $(LDIR) clean
+	rm -rf $(OBJDIR)
+	make -C $(LIBDIR) clean
+	make -C $(MLXDIR) clean
 
 fclean: clean
-	/bin/rm -f $(NAME)
-	make -C $(LDIR) fclean
+	rm -rf $(NAME)
+	make -C $(LIBDIR) fclean
 
 re: fclean all
