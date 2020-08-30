@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/30 11:35:14 by jkarren           #+#    #+#             */
+/*   Updated: 2020/08/30 11:47:21 by jkarren          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fdf.h"
 
-void	usage(void)
+void		usage(void)
 {
 	ft_putendl("Usage: ./fdf filename");
 }
 
-void	ft_error(char *error, int ret)
+void		ft_error(char *error, int ret)
 {
 	ft_putendl(error);
 	exit(ret);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fdf.h                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkarren <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/30 12:12:15 by jkarren           #+#    #+#             */
+/*   Updated: 2020/08/30 12:12:18 by jkarren          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FDF_H
 # define FDF_H
 
@@ -6,34 +18,25 @@
 
 typedef struct	s_fdf
 {
-	int	**map;
+	int			**map;
 	float		x;
 	float		y;
 	float		z;
-	int			is_last;
-
-	int			color;
-	int			scale;
-	int			z_scale;
-	int			shift_x;
-	int			shift_y;
-	int			is_isometric;
-	double		angle;
-	int			win_x;
-	int			win_y;
 	void		*mlx_ptr;
 	void		*win_ptr;
 }				t_fdf;
 
-int			main(int argc, char *argv[]);
-void	usage(void);
-void	ft_error(char *error, int ret);
+int			main(int ac, char **av);
+void		usage(void);
+void		ft_error(char *error, int ret);
 static void	reset_map(t_fdf *fdf);
-void		read_map(char *av, t_fdf *fdf);
-static void	get_values(t_fdf *fdf, int y, int z, char *line);
-static int	count_lines(t_fdf *fdf, char *argv);
 static int	count_values(char *line);
-void    isometric(float *x, float *y, int z);
-void    bresenhamen(int x, int y, int x1, int y1, fdf *data);
-void    draw(fdf *data);
-void    window(t_fdf *fdf, int width, int height, char *title);
+static int	count_lines(t_fdf *fdf, char *file);
+static void	get_values(t_fdf * fdf, int y, int z, char *line);
+void		read_map(t_fdf *fdf, char *file);
+void		isometric(float *x, float *y, int z);
+float		ft_abs(float i);
+float		ft_max(float a, float b);
+void		draw_line(t_fdf begin, t_fdf end, t_fdf *fdf);
+
+#endif
