@@ -7,7 +7,7 @@ NAME	= fdf
 SRCDIR	= ./src/
 SRC		= main.c \
 		  read.c \
-		  window.c \
+		  draw.c \
 
 OBJDIR	= ./obj/
 OBJ		= $(addprefix $(OBJDIR),$(SRC:.c=.o))
@@ -16,13 +16,13 @@ INC	= -I ./includes/
 
 MLXDIR		= ./miniLibX/
 MLXLIB	= $(addprefix $(MLXDIR),mlx.a)
-MLXINC	= -I ./miniLibX
-MLXLNK	= -L ./miniLibX -l mlx -framework OpenGL -framework AppKit
+MLXINC	= -I ./minilibx
+MLXLNK	= -L ./minilibx #-l #mlx -framework OpenGL -framework AppKit
 
 LIBDIR	= ./libft/
 LIBFT	= $(addprefix $(LIBFT_DIR),libft.a)
 LIBINC = -I ./libft
-LIBLNK = -L ./libft -l ft
+LIBLNK = -L ./libft -lft
 
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -g

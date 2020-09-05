@@ -73,6 +73,7 @@ SRC = ft_atoi.c \
 	  ft_toupper.c \
 	  ft_wordlen.c \
 	  ft_wordscount.c \
+	  get_next_line.c \
 	  
 SRCS = $(addprefix $(SDIR), $(SRC))
 

@@ -10,13 +10,19 @@
 
 ## Please use configure script
 
+NAME = mlx.a
+SRC = mlx_new_window.m mlx_init_loop.m mlx_new_image.m mlx_shaders.c
+OBJ1 = $(SRC:.c=.o)
+OBJ = $(OBJ1:.m=.o)
 
-all	: do_configure
+all	: $(NAME)
 
-do_configure	:
-	./configure
+$NAME:$(OBJ)
+	ar -r $(NAME) $(OBJ)
+	ranlib $(NOM)
 
 clean	:
-	./configure clean
+	rm -rf $(NAME) $(OBJ) *~
+	rm -rf mlx_app
 
 re	: clean all
